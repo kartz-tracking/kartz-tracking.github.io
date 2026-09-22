@@ -37,19 +37,27 @@
 
   <h2>What happens to a recording</h2>
   <p>The video file is opened and decoded in your own browser. It is never uploaded. Still frames
-  sampled from it are sent, over an encrypted connection, to a model provider that reads the
-  names and scores in them. Neither the add-on nor its server keeps the frames or the text after
-  the answer comes back.</p>
+  sampled from it are sent, over an encrypted connection, to the model provider you configured —
+  through a service you run yourself, holding your own key — and that provider reads the names
+  and scores in them. Neither the add-on nor its server keeps the frames or the text after the
+  answer comes back. What the provider does with a request is governed by their own terms.</p>
 
   <h2>What is stored</h2>
   <ul>
     <li><b>In the spreadsheet:</b> the settings you choose — which tab holds the roster, and the
-      address of the server. Anyone who can open the spreadsheet can see and change these.</li>
-    <li><b>On the server:</b> nothing. It holds no database and writes no logs of your data. It
-      checks that a request carries a valid Google sign-in token for this add-on, passes the
+      address of the service that reads recordings. Anyone who can open the spreadsheet can see
+      and change these. The add-on also keeps a log tab of its own, named “Extract log”, with a
+      line per extraction saying when it happened, who did it and how many rows were added. It
+      is the only tab the add-on will create, and you can delete it at any time.</li>
+    <li><b>In your browser:</b> if “Remember my fixes” is ticked, a name you correct by hand is
+      kept on your own device so the same player is recognised next time, along with the window
+      size you dragged the dialog to. Nothing there is sent anywhere, and clearing your
+      browser’s data for the site removes it.</li>
+    <li><b>On the server:</b> nothing. It holds no database and writes no record of your data.
+      It checks that a request carries a valid Google sign-in token for this add-on, passes the
       request to the model provider, and returns the answer.</li>
-    <li><b>Your email address</b> is read from the Google-signed token to decide whether a request
-      is allowed. It is not stored, shared, or used for anything else.</li>
+    <li><b>Your email address</b> is read from the Google-signed token to decide whether a
+      request is allowed. It is not stored, shared, or used for anything else.</li>
   </ul>
 
   <h2>What is never done</h2>
@@ -62,8 +70,9 @@
 
   <h2>Removing it</h2>
   <p>Revoke access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
-  or delete the script from the spreadsheet's Extensions → Apps Script. Nothing of yours is held
-  anywhere else, so there is nothing else to delete.</p>
+  or uninstall the add-on. The rows it wrote are ordinary rows and stay in your spreadsheet;
+  delete the “Extract log” tab if you no longer want it, and clear your browser’s data for the
+  site to forget the corrections it remembered. Nothing of yours is held anywhere else.</p>
 
   <h2>Contact</h2>
   <p>jk06nm04@gmail.com</p>
