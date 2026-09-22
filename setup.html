@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Setup — Extract Data</title>
+<title>Setup — TW Data Extractor</title>
 <style>
   :root { color-scheme: light dark; --bg:#f4f6fa; --panel:#fff; --ink:#0b1420; --ink2:#34435a;
           --muted:#5d6c82; --line:rgba(16,32,58,.12); --accent:#0a6cf0; --code:#eef2f8; }
@@ -31,7 +31,7 @@
 <body>
 <main>
   <h1>Setting it up</h1>
-  <p class="sub">Extract Data reads recordings with a model. You bring the model.</p>
+  <p class="sub">TW Data Extractor reads recordings with a model. You bring the model.</p>
 
   <div class="note">
     <p style="margin:0">The add-on itself installs in one click, but it cannot read a recording
@@ -58,7 +58,7 @@ npx wrangler deploy</pre>
 
   <h2>4. Tell it which add-on may call it</h2>
   <p>The service answers nobody until it knows. Open a spreadsheet, then
-  <b>Extensions → Extract Data → Extract a recording</b>, press the gear, put in your service's
+  <b>Extensions → TW Data Extractor → Extract a recording</b>, press the gear, put in your service's
   address, and press <b>Save and test</b>. It will refuse — and the refusal contains a client id
   ending in <code>.apps.googleusercontent.com</code>. Give it that:</p>
 <pre>npx wrangler secret put SCRIPT_AUD</pre>
